@@ -1,0 +1,64 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{umlaut,amssymb,amsmath,amscd,a4,amsfonts}
+\usepackage{amssymb,amsmath,amscd,a4,amsfonts,amsthm}
+%(a4 = 210 X 297 mm)
+\hoffset -1in \voffset -1in \oddsidemargin 20mm \evensidemargin
+\oddsidemargin \textwidth 170mm \topmargin 5mm \textheight 247mm
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\DeclareMathOperator*{\argmin}{arg\,min} % thin space, limits underneath in displays
+
+\begin{document}
+
+\pagestyle{headings}
+\noindent UNIVERSITE DE GENEVE \hfill Section de Mathématiques\\
+\noindent Facult\'e des sciences \hfill \\[-3mm]
+\hrule
+
+\large
+
+\begin{center}
+\textbf{Optimization with Applications I \\ TP 4}
+\end{center}
+\hrule
+\text{}\\[1cm]
+
+
+We will implement a general cross validation scheme and test it on some data.  Cross validation allows us not to do an explicit train-test split and instead make that splitting part of the training procedure.
+
+To that end download the Postdata.txt. Here, again we want to find a linear model matching the "y" variable to the others. 
+
+\begin{exercise}
+    Implement a k-fold cross-validation function that receives as input a general learner $l$ and a data set $X, Y$, the amount $k$ of observations to split your dataset into, an error function $\emph err$ and returns the achieved errors.
+
+    Thus we are looking for a function
+    \begin{verbatim}
+        def cross_val(learner, X, Y, k):
+            # learner is a function that finds an optimum given some data
+            # We will shuffle and then split the data set into k equal parts and 
+            # perform learning on them. Return all the errors.
+            return [errors]
+    \end{verbatim}
+\end{exercise}
+
+\begin{exercise}
+    We assume that the test error function for ridge regression 
+    \[R : \lambda \mapsto \frac{1}{N_\text{test}} ||\underline{y_\text{test}} - X_\text{test} \hat{\alpha}_\lambda||^2_2\]
+    is convex and that we know of an upper bound $K$ for the optimal $\lambda$. Here $\hat{\alpha}_\lambda$ is the $\alpha$ solving the ridge regression problem with parameter $\lambda$. Apply an optimization method here in conjunction with your result from Exercise 1 to find the optimal $\lambda$. Use whatever method you want but make sure to keep the number of evaluations of the cross validation low to minimize the runtime.  
+\end{exercise}
+
+\begin{exercise}
+    Test your function on the postdata.txt and plot relevant results. That includes a plot for the errors produced by different lambdas.
+\end{exercise}
+\bigskip
+
+{\bf Important} : Every function and exercise must be tested. Plug in some values for which you know the correct answers and compare the output of your function. 
+
+\end{document}

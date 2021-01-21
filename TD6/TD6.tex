@@ -1,0 +1,54 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{umlaut,amssymb,amsmath,amscd,a4,amsfonts}
+\usepackage{amssymb,amsmath,amscd,a4,amsfonts,amsthm,mathrsfs}
+%(a4 = 210 X 297 mm)
+\hoffset -1in \voffset -1in \oddsidemargin 20mm \evensidemargin
+\oddsidemargin \textwidth 170mm \topmargin 5mm \textheight 247mm
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+\begin{document}
+
+\pagestyle{headings}
+\noindent UNIVERSITE DE GENEVE \hfill Section de Mathématiques\\
+\noindent Facult\'e des sciences \hfill \\[-3mm]
+\hrule
+
+\large
+
+\begin{center}
+\textbf{Optimization with Application I \\ Exercise Sheet 6 - Discussed on 11.12.2020}
+\end{center}
+\hrule
+\text{}\\[1cm]
+
+We will have a look at a classification problem. We are given a data set $(x_i, y_i)_{i=1}^n$ with $x_i \in \mathbb{R}^p$ and $y_i \in \{-1, 1\}$. These are points in $p$-dimensional space that each have a class $\pm 1$ associated with them. We will call the set of points in class 1 $A = \{x_i: \; y_i = 1\}$ and $B = \{x_i: \; y_i = -1\}$.
+
+A hyperplane is given by a vector $w\in \mathbb{R}^p$ and an offset $b \in \mathbb{R}$ via $\{x: \; <x, w> - b = 0\}$.
+
+\begin{exercise}
+	Assume that there exists a hyperplane separating $A$ and $B$.
+	\begin{enumerate}
+		\item We want to find the hyperplane $H$ that has a maximum margin on both sides. That is we want to find the $w, b$ such that $\min_{x\in A} \text{dist}(x, H) = \min_{x \in B} \text{dist}(x, H)$ is maximal. Formulate this as a constrained optimization problem.
+		\item Solve this problem using Lagrange multipliers. (You may need to expand on the cases we have considered, since your constraint will be an inequality.)
+		\item How would you now classify a new point $x \in \mathbb{R}^p$?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Let $p = 2$ and $A \subset \mathbb{D}$, $B \subset \mathbb{C} \setminus \mathbb{D}$, where $\mathbb{D} = \{x: ||x||_2 \leq 1\}$. Find a mapping $\phi: \mathbb{R}^2 \to \mathbb{R}^3$ such that $\phi(A)$ is separable from $\phi(B)$ by a hyperplane.
+
+	What changes in the formulas from Exercise 1 when considering such a mapping first?
+\end{exercise}
+
+
+\end{document}

@@ -1,0 +1,84 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{umlaut,amssymb,amsmath,amscd,a4,amsfonts}
+\usepackage{amssymb,amsmath,amscd,a4,amsfonts,amsthm}
+%(a4 = 210 X 297 mm)
+\hoffset -1in \voffset -1in \oddsidemargin 20mm \evensidemargin
+\oddsidemargin \textwidth 170mm \topmargin 5mm \textheight 247mm
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\begin{document}
+
+\pagestyle{headings}
+\noindent UNIVERSITE DE GENEVE \hfill Section de Mathématiques\\
+\noindent Facult\'e des sciences \hfill \\[-3mm]
+\hrule
+
+\large
+
+\begin{center}
+\textbf{Optimization with Applications I \\ TP 2}
+\end{center}
+\hrule
+\text{}\\[1cm]
+
+\begin{exercise}
+    Implement the Newton algorithm used to find roe minimum of a function. It should be a function with the signature
+    \begin{verbatim}
+        def function newton(f_der, f_der2, x_0, epsi=1.e-6, max_steps=1000):
+                # your code here
+            if not converged:
+                raise Exception("does not converge")
+            else:
+                return (zero it converged to)
+    \end{verbatim}
+    Here \emph{f\_der} and \emph{f\_der2} should be the function's first and second derivatives calculated analytically.
+
+    Test it on multiple functions with multiple starting values and find good examples of convergence and non-convergence.
+\end{exercise}
+
+\begin{exercise}
+    Replace the input of the derivative in the algorithm by the first week's numerical derivative, so the new newton has the signature
+    \begin{verbatim}
+        def function num_newton(f_der, x_0, epsi=1.e-6, max_steps=1000):
+                # your code here
+            if not converged:
+                raise Exception("does not converge")
+            else:
+                return (zero it converged to)
+    \end{verbatim}
+    Try to reuse the code from the first exercise.
+
+    Can you find an example that converges for the analytical derivative but not for the numerical? 
+\end{exercise}
+
+\begin{exercise}
+    Implement the golden section algorithm to find a minimum of a given unimodal function $f$ over the interval $[a,b]$.
+    \begin{verbatim}
+        def function golden_section(f, a, b, eps=1.e-6):
+            # your code here
+            return minimum
+    \end{verbatim}
+\end{exercise}
+
+\begin{exercise}
+    We want to perform linear regression like in Exercise $3$ on TD1. In order to produce nice pictures we will do this in dimension $2$.
+
+    Pick some parameters $\alpha_0, \alpha_1$ and a variance $\sigma^2$. Draw $n = 50$ points $\{x_i\}_{i=1}^n$ at random from some interval you choose. Produce the values $y_i = \alpha_0 + \alpha_1 x_i + \epsilon_i$ where $\epsilon_i \sim \mathcal{N}(0, \sigma^2)$.
+
+    Now we only treat $\{y_i\}$ as input and want to find the maximum likelihood $\alpha_0, \alpha_1, \sigma^2$. Find these values and plot the $x,y$ plot as well as the line defined by $\alpha_0, \alpha$.
+
+    How does your result compare to the actual variables that created the data?
+\end{exercise}
+
+\bigskip
+
+{\bf Important} : Every function and exercise must be tested. Plug in some values for which you know the correct answers and compare the output of your function. 
+
+\end{document}

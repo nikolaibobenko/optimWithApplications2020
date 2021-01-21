@@ -1,0 +1,58 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{umlaut,amssymb,amsmath,amscd,a4,amsfonts}
+\usepackage{amssymb,amsmath,amscd,a4,amsfonts,amsthm}
+%(a4 = 210 X 297 mm)
+\hoffset -1in \voffset -1in \oddsidemargin 20mm \evensidemargin
+\oddsidemargin \textwidth 170mm \topmargin 5mm \textheight 247mm
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\DeclareMathOperator*{\argmin}{arg\,min} % thin space, limits underneath in displays
+
+\begin{document}
+
+\pagestyle{headings}
+\noindent UNIVERSITE DE GENEVE \hfill Section de Mathématiques\\
+\noindent Facult\'e des sciences \hfill \\[-3mm]
+\hrule
+
+\large
+
+\begin{center}
+\textbf{Optimization with Applications I \\ TP 3}
+\end{center}
+\hrule
+\text{}\\[1cm]
+
+
+Download the dataset {\bf House Prices Advanced}. This includes many parameters of houses as well as their actual sale price. It is split into a train and test dataset. You will be asked to fit a model to the train dataset and evaluate it on the test dataset. Some of the dataset values are not numerical but rather categorical. we will ignore these for our purposes here - so please filter them out and work only with the parameters that are numerical and fit into the context of a linear regression.
+
+We call $y$ the vector of house prices and $X$ the regression matrix of relevant parameters.
+
+\begin{exercise}[Least Squares]
+	Find the least squares optimizer $\argmin_\alpha ||y - X \alpha||_2^2$. Which factors have the most influence on home pricing? How good does the estimator perform on the test data?
+\end{exercise}
+
+\begin{exercise}[Ridge regression]
+	Write a method that finds the optimizer 
+	\[\hat{\alpha}_\lambda = \argmin_\alpha ||y - X \alpha||_2^2 + \lambda ||\alpha||_2^2\]
+	for any $\lambda > 0$.
+
+	Plot the mean square error on the test set as a function of the $\lambda$ you trained your estimator on. Is this what you expected?
+\end{exercise}
+
+
+\begin{exercise}[Steepest Descent]
+	Implement a steepest descent algorithm that approximates $\hat{\alpha}_\lambda$ by following the gradient. Use $||\nabla f(\alpha)||_2^2 \leq \epsilon$ as a stopping condition. Compare the results to those of Exercise $1$ and again plot the mean square error plot on the test set as a function of $\lambda$.
+\end{exercise}
+\bigskip
+
+{\bf Important} : Every function and exercise must be tested. Plug in some values for which you know the correct answers and compare the output of your function. 
+
+\end{document}

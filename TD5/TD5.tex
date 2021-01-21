@@ -1,0 +1,51 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{umlaut,amssymb,amsmath,amscd,a4,amsfonts}
+\usepackage{amssymb,amsmath,amscd,a4,amsfonts,amsthm,mathrsfs}
+%(a4 = 210 X 297 mm)
+\hoffset -1in \voffset -1in \oddsidemargin 20mm \evensidemargin
+\oddsidemargin \textwidth 170mm \topmargin 5mm \textheight 247mm
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+\begin{document}
+
+\pagestyle{headings}
+\noindent UNIVERSITE DE GENEVE \hfill Section de Mathématiques\\
+\noindent Facult\'e des sciences \hfill \\[-3mm]
+\hrule
+
+\large
+
+\begin{center}
+\textbf{Optimization with Application I \\ Exercise Sheet 5 - Discussed on 04.12.2020}
+\end{center}
+\hrule
+\text{}\\[1cm]
+
+
+\begin{exercise}
+	For $y \in \mathbb{R}^N, X\in \mathbb{R}^{N\times P}$ and $\lambda > 0$, derive the formula to implement a relaxation algorithm to solve:
+	\begin{itemize}
+	 	\item Ridge Regression
+	 	\[\argmin_\alpha \frac{1}{2}||y-X\alpha||_2^2 + \lambda ||\alpha||_2^2\]
+	 	\item The Lasso
+	 	\[\argmin_\alpha \frac{1}{2}||y-X\alpha||_2^2 + \lambda ||\alpha||_1\] 
+	\end{itemize} 
+\end{exercise}
+
+\begin{exercise}
+	
+\end{exercise}
+
+
+
+\end{document}

@@ -1,0 +1,66 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{umlaut,amssymb,amsmath,amscd,a4,amsfonts}
+\usepackage{amssymb,amsmath,amscd,a4,amsfonts,amsthm,mathrsfs}
+%(a4 = 210 X 297 mm)
+\hoffset -1in \voffset -1in \oddsidemargin 20mm \evensidemargin
+\oddsidemargin \textwidth 170mm \topmargin 5mm \textheight 247mm
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\begin{document}
+
+\pagestyle{headings}
+\noindent UNIVERSITE DE GENEVE \hfill Section de Mathématiques\\
+\noindent Facult\'e des sciences \hfill \\[-3mm]
+\hrule
+
+\large
+
+\begin{center}
+\textbf{Optimization with Application I \\ Exercise Sheet 2 - Discussed on 09.10.2020}
+\end{center}
+\hrule
+\text{}\\[1cm]
+
+
+This sheet is all about that ridge and lasso regression. We will see some conditions for uniqueness of solution and develop some intuition on how to solve these problems and what makes them hard or easy.
+
+\begin{exercise}
+	Let $y\in \mathbb{R}, \lambda \geq 0$. Find the minima of the functions $f$ and $g$.
+	\begin{align*}
+		f(\alpha) &= \frac{1}{2} (y - \alpha)^2 + \lambda \alpha^2 \\
+		g(\alpha) &= \frac{1}{2} (y - \alpha)^2 + \lambda |\alpha|
+	\end{align*}
+\end{exercise}
+
+\begin{exercise}
+	Let $y, x \in \mathbb{R}^n, \lambda \geq 0$. Find closed form expressions for the minima of the functions $f, g$.
+	\begin{align*}
+		f(\alpha) &= \frac{1}{2} ||y - x\alpha||_2^2 + \lambda \alpha^2 \\
+		g(\alpha) &= \frac{1}{2} ||y - x\alpha||_2^2 + \lambda |\alpha|
+	\end{align*}
+\end{exercise}
+
+\begin{exercise}
+	Let $y \in \mathbb{R}^n$.
+
+	Let $X$ be an orthogonal $n \times n$ matrix. Find the closed form expression for
+	\[\min_{\alpha \in \mathbb{R}^n} \frac{1}{2} ||y - X\alpha||^2_2 + \lambda ||\alpha||_1\]
+	for a fixed $\lambda \geq 0$.
+
+	Let now $X$ be an arbitrary $n \times p$ matrix. Find the closed form expression for
+	\[\min_{\alpha \in \mathbb{R}^p} \frac{1}{2} ||y - X\alpha||^2_2 + \lambda ||\alpha||_2^2\]
+	for a fixed $\lambda > 0$.
+
+	Next let $X$ be an arbitrary $n \times p$ matrix and $B$ and arbitrary $m \times p$ matrix. What conditions on $X, B$ guarantee the uniqueness of a solution to
+	\[\min_{\alpha \in \mathbb{R}^p} \frac{1}{2} ||y - X\alpha||^2_2 + \lambda ||B\alpha||_2^2\]
+	for a fixed $\lambda > 0$?
+\end{exercise}
+
+\end{document}

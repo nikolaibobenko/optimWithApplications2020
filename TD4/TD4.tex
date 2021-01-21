@@ -1,0 +1,60 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{umlaut,amssymb,amsmath,amscd,a4,amsfonts}
+\usepackage{amssymb,amsmath,amscd,a4,amsfonts,amsthm,mathrsfs}
+%(a4 = 210 X 297 mm)
+\hoffset -1in \voffset -1in \oddsidemargin 20mm \evensidemargin
+\oddsidemargin \textwidth 170mm \topmargin 5mm \textheight 247mm
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\begin{document}
+
+\pagestyle{headings}
+\noindent UNIVERSITE DE GENEVE \hfill Section de Mathématiques\\
+\noindent Facult\'e des sciences \hfill \\[-3mm]
+\hrule
+
+\large
+
+\begin{center}
+\textbf{Optimization with Application I \\ Exercise Sheet 4 - Discussed on 13.11.2020}
+\end{center}
+\hrule
+\text{}\\[1cm]
+
+
+\begin{exercise}
+	Let $X$ be an $N \times P$ matrix with $P > N$ of rank $N$ and $y \in \mathbb{R}^N$. Using a Lagrange multiplier $\lambda \in \mathbb{R}^N$ show that
+	\[\min_{\alpha \in \mathbb{R}^P} ||\alpha||_2^2 \; \text{ s.t. } y = X\alpha\]
+	has a closed form expression. Comment on the dimension of the matrix that needs to be inverted.
+\end{exercise}
+
+\begin{exercise}
+	Consider the problem of minimizing 
+	\[f(x, y) = x + y\]
+	under the constraints
+	\[h_1(x, y) = (x-1)^2 + y^2 - 1 = 0\]
+	and 
+	\[h_2(x, y) = (x-2)^2 + y^2 - 4 = 0.\]
+	Draw the level lines of the cost function and the constraint sets. Identify the unique feasible solution.
+
+	Show that this point is not a regular point and that there exists no Lagrange multipliers for this problem.
+\end{exercise}
+
+\begin{exercise}
+	Use the Lagrange multiplier theorem to solve $\min f(x)$ subject to $h(x) = 0$ with
+	\begin{enumerate}
+		\item $f(x) = ||x||_2^2, h(x) = \sum_{p=1}^P x_p - 1$
+		\item $f(x) = \sum_{p=1}^P x_p, h(x) = ||x||^2_2 - 1.$ 
+	\end{enumerate}
+\end{exercise}
+
+
+
+\end{document}

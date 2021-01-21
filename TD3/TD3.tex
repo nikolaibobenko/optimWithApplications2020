@@ -1,0 +1,67 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{umlaut,amssymb,amsmath,amscd,a4,amsfonts}
+\usepackage{amssymb,amsmath,amscd,a4,amsfonts,amsthm,mathrsfs}
+%(a4 = 210 X 297 mm)
+\hoffset -1in \voffset -1in \oddsidemargin 20mm \evensidemargin
+\oddsidemargin \textwidth 170mm \topmargin 5mm \textheight 247mm
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\begin{document}
+
+\pagestyle{headings}
+\noindent UNIVERSITE DE GENEVE \hfill Section de Mathématiques\\
+\noindent Facult\'e des sciences \hfill \\[-3mm]
+\hrule
+
+\large
+
+\begin{center}
+\textbf{Optimization with Application I \\ Exercise Sheet 3 - Discussed on 23.10.2020}
+\end{center}
+\hrule
+\text{}\\[1cm]
+
+
+\begin{exercise}
+	Let $g: \mathbb{R}^N \to \mathbb{R}^M$ be an affine function given by $Ax + b$ and $f:\mathbb{R}^M \to \mathbb{R}$ a convex function.
+	\begin{enumerate}
+		\item Show that $f \circ g$ is convex.
+		\item If $f$ is stricly convex, find a necessary and sufficient condition for $f \circ g$ to be striclty convex.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Let $f: \mathbb{R}^N \to \mathbb{R}$ be a convex function. Show that the sets
+	\[\{x \in \mathbb{R}^N: f(x) < c\}\] 
+	and
+	\[\{x \in \mathbb{R}^N: f(x) \leq c\}\]
+	are convex. Conclude that the set of minimizers of $f$ is convex.
+\end{exercise}
+
+\begin{exercise}
+	Consider the model
+	\[Y_n = \mu + \epsilon_n, \quad n=1,\ldots N\]
+	where $\epsilon_n \sim \text{Laplace}(\lambda)$ are i.i.d. Give a closed form expression for the maximum likelihood estimator of $(\lambda, \mu)$ when $N = 2M + 1$ is odd and all the data are distinct.
+	Suggest an estimator when N is even and all data are distinct.
+\end{exercise}
+
+\begin{exercise}
+	Find a function $f: \mathbb{R}^N \to \mathbb{R}$ with the following properties:
+	\begin{enumerate}
+ 		\item $f$ is differentiable.
+ 		\item $\bf 0$ is a local minimum of $f$ over all lines that pass through $\bf 0$. i.e.
+ 		\[g(\alpha) := f(\alpha {\bf d})\]
+ 		has a local minimum at $\alpha=0$ for any ${\bf d} \in \mathbb{R}^N$.
+ 		\item $\bf 0$ is not a local minimum of $f$.
+	 \end{enumerate}
+\end{exercise}
+
+
+\end{document}
